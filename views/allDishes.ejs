@@ -1,0 +1,40 @@
+<%- include('head') %>
+<link rel="stylesheet" href="/stylesheets/all.css" />
+<title>Restaurantes</title>
+<%- include('navbar') %>
+
+<main>
+  <section class="container-fluid text-center">
+    <h1>Descubre todos nuestros platos</h1>
+    <div class="contenedor row justify-content-center align-items-center">
+      <% result.sort((a, b) => a.restaurant_id - b.restaurant_id); %> 
+      <% result.forEach(elem => { %>
+      <div
+        class="col-10 col-md-4 col-xl-3 card mx-3 my-5 d-flex justify-content-center align-items-center text-center"
+      >
+        
+          <a href="/platos/onePlate/<%= elem.dish_id %>"
+            ><img
+              class="card-img mt-3"
+              src="/images/platos/<%= elem.dish_img %>"
+              alt="imagen-plato"
+          /></a>
+          <div class="p-2 card-body mb-3 d-flex flex-column justify-content-center">
+          <h5 class="card-title fs-2 mt-5 text-light"><%= elem.dish_name %></h5>
+          <p class="text-body fs-4"><%= elem.price %>€</p>
+          <a href="/restaurantes/oneRestaurant/<%= elem.restaurant_id %>">
+            <p class="text-body fs-4">
+              <%= result_restaurant.find((rest) => rest.restaurant_id ===
+              elem.restaurant_id).restaurant_name %>
+            </p>
+          </a>
+          <a href="/platos/onePlate/<%= elem.dish_id %>">
+            <button class="card-button">Ver mas</button>
+          </a>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+  </section>
+</main>
+<%- include('footer') %>

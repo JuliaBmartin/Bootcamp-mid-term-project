@@ -1,0 +1,213 @@
+<%- include('head') %>
+<link rel="stylesheet" href="/stylesheets/one.css" />
+<title><%= result[0].restaurant_name %></title>
+<%- include('navbar') %>
+
+<main class="container-fluid">
+  <!-- Section 1 -->
+  <section
+    class="container-fluid row justify-content-center align-items-center"
+  >
+    <div>
+      <h1 class="text-center mt-5 pt-5 pb-3">
+        <%= result[0].restaurant_name %>
+      </h1>
+    </div>
+  </section>
+
+  <!-- Section 2 -->
+  <section class="container-fluid ms-auto">
+    <div class="row">
+      <div
+        class="foto col-12 col-md-7 d-flex justify-content-center align-items-center"
+      >
+        <img
+          class="res-img"
+          src="/images/restaurantes/<%= result[0].restaurant_img %>"
+          alt="imagen-restaurante"
+        />
+      </div>
+      <div
+        class="info col-12 col-md-3 d-flex flex-column justify-content-center align-items-center"
+      >
+        <h2><%= result[0].style %></h2>
+        <p class="fs-3"><%= result[0].information %></p>
+        <p class="fs-4"><%= result[0].email %></p>
+        <p class="fs-4"><%= result[0].phone_number %></p>
+      </div>
+      <div
+        class="info col-12 col-md-2"
+      >
+    </div>
+
+    <!-- Botones -->
+    <div
+      class="row d-flex justify-content-center align-items-center mt-5 ms-auto me-auto"
+    >
+      <div class="col-10 d-flex justify-content-center align-items-center gap-2">
+        <button class="boton px-3" onclick="editForm(true)">
+          Modificar datos
+        </button>
+        <a href="/restaurantes/resetImg/<%= result[0].restaurant_id %>">
+          <button class="boton px-3">Quitar imagen</button>
+        </a>
+        <button class="boton px-3" onclick="showForm(true)">
+          Subir un plato
+        </button>
+      </div>
+      <div class="col-10 d-flex justify-content-center align-items-center gap-2">
+        <a
+          href="/restaurantes/deleteRestaurantLogic/<%= result[0].restaurant_id %>"
+        >
+          <button class="boton px-3">Eliminar / logica</button>
+        </a>
+        <a href="/restaurantes/deleteRestaurant/<%= result[0].restaurant_id %>">
+          <button class="boton px-3">Borrar permanente</button>
+        </a>
+        <a href="/restaurantes">
+          <button class="boton px-3">Volver</button>
+        </a>
+      </div>
+    </div>
+
+    <!-- Form Modificar datos -->
+    <div class="botones row mx-auto">
+      <div class="form-add-plate col-8 col-md-6 mb-5 mx-auto" id="editForm">
+        <form
+          action="/restaurantes/editarRestaurante/<%= result[0].restaurant_id %>"
+          method="post"
+          enctype="multipart/form-data"
+          class="form-res row mb-5 mt-3 d-flex flex-column justify-content-center align-items-center mx-auto"
+        >
+          <div class="d-flex gap-3">
+            <input
+              type="text"
+              name="restaurant_name"
+              class="pium input col-5 mx-auto"
+              value="<%= result[0].restaurant_name %>"
+            />
+            <input
+              type="text"
+              name="style"
+              class="pium input col-5 mx-auto"
+              value="<%= result[0].style %>"
+            />
+          </div>
+          <div class="d-flex gap-3">
+            <input
+              type="email"
+              name="email"
+              class="pium input col-5 mx-auto"
+              value="<%= result[0].email %>"
+            />
+            <input
+              type="text"
+              name="phone_number"
+              class="pium input col-5 mx-auto"
+              value="<%= result[0].phone_number %>"
+            />
+          </div>
+          <textarea
+            name="information"
+            id="textareaId"
+            class="pium input text col-7 mx-auto"
+            maxlength="255"
+          >
+          <%= result[0].information %>
+          </textarea>
+
+          <label class="label-img d-flex justify-content-center mt-2" for="file"
+            >Sube una imagen</label
+          >
+          <input type="file" name="img" class="input col-7 mx-auto" />
+
+          <h3><%= typeof message != 'undefined' ? message : null %></h3>
+
+          <div class="d-flex justify-content-center gap-3  mx-auto">
+            <button class="boton px-3">Aceptar</button>
+            <button type="button" class="boton px-3" onclick="editForm(false)">
+              Cancelar
+            </button>
+            <button type="reset" class="boton px-3">Limpiar</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Form Subir Plato -->
+      <div class="form-add-plate col-8 col-md-6 mb-5  mx-auto" id="formPlate">
+        <form
+          action="/platos/subirPlato/<%= result[0].restaurant_id %>"
+          method="post"
+          enctype="multipart/form-data"
+          class="row mb-5 mt-3 d-flex flex-column justify-content-center align-items-center  mx-auto"
+        >
+          <div class="d-flex gap-3">
+            <input
+              type="text"
+              name="dish_name"
+              class="pium input col-5 mx-auto"
+              placeholder="Nombre"
+            />
+
+            <input
+              type="text"
+              name="price"
+              class="pium input col-5 mx-auto"
+              placeholder="Precio"
+            />
+          </div>
+
+          <textarea name="description" class="pium input col-7 mx-auto" maxlength="255">
+          </textarea>
+
+          <label class="label-img d-flex justify-content-center mt-2" for="file">Sube una imagen</label>
+          <input type="file" name="img" class="input col-7 mx-auto" />
+
+          <h3><%= typeof message != 'undefined' ? message : null %></h3>
+
+          <div class="d-flex justify-content-center gap-3  mx-auto">
+            <button class="boton px-3">Aceptar</button>
+            <button type="reset" class="boton px-3" onclick="showForm(false)">
+              Cancelar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <div
+    class="col-12 d-flex flex-column justify-content-center align-items-center text-center mt-5 mb-3"
+  >
+    <hr />
+  </div>
+
+  <!-- Section 3 -->
+  <section class="container-fluid text-center">
+    <div class="row justify-content-center align-items-center">
+      <% result_dish.forEach(elem => { %>
+      <div
+        class="col-10 col-md-4 col-xl-3 card mx-3 my-5 d-flex justify-content-center align-items-center text-center"
+      >
+        <a href="/platos/onePlate/<%= elem.dish_id %>">
+          <img
+            class="card-img mt-3"
+            src="/images/platos/<%= elem.dish_img %>"
+            alt="imagen-plato"
+          />
+        </a>
+        <div
+          class="p-2 card-body mb-3 d-flex flex-column justify-content-center"
+        >
+          <h5 class="card-title fs-2 mt-5 text-light"><%= elem.dish_name %></h5>
+          <p class="text-body fs-4"><%= elem.price %>€</p>
+          <a href="/platos/onePlate/<%= elem.dish_id %>">
+            <button class="card-button">Ver mas</button>
+          </a>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+  </section>
+</main>
+<%- include('footer') %>

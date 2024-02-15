@@ -1,0 +1,203 @@
+<%- include('head') %>
+<link rel="stylesheet" href="/stylesheets/style.css" />
+<title>Home</title>
+<%- include('navbar') %>
+
+<!-- main -->
+<main class="container-fluid">
+  <section class="row">
+    <div class="col">
+      <h1 class="text-center mt-5 pt-5 pb-3">Bienvenid@s A COMER!</h1>
+    </div>
+  </section>
+
+  <div
+    class="col-12 d-flex flex-column justify-content-center align-items-center text-center my-3"
+  >
+    <hr />
+  </div>
+
+  <!-- Carrusel 1 -->
+  <section
+    class="section-carousel row container-fluid justify-content-center mt-4 pt-4 mb-5 pb-5 ms-auto me-auto"
+  >
+    <h2 class="mb-5 text-center">Descubre nuestros restaurantes</h2>
+    <div class="cont d-flex col-10 col-lg-8 justify-content-center al">
+      <div class="container-xxl">
+        <div
+          id="carouselExampleAutoplaying1"
+          class="carousel slide"
+          data-bs-ride="carousel"
+          data-bs-interval="2000"
+        >
+          <div class="carousel-indicators">
+            <% result.forEach(elem => { %>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide-to="<%= elem.restaurant_id %>"
+              class="active mb-3"
+              aria-current="true"
+              aria-label="<%= elem.restaurant_name %>"
+            ></button>
+            <% }) %>
+          </div>
+
+          <div class="carousel-inner justify-content-center align-items-center">
+            <div class="carousel-item active">
+              <a
+                href="/restaurantes/oneRestaurant/<%= result[0].restaurant_id %>"
+              >
+                <img
+                  src="/images/restaurantes/<%= result[0].restaurant_img!==null?result[0].restaurant_img:'user.png' %>"
+                  class="d-block img-car"
+                  alt="fotop"
+                />
+                <a
+                  href="/restaurantes/oneRestaurant/<%= result[0].restaurant_id %>"
+                >
+                  <h5 class="text-center fs-3 mt-3">
+                    <%= result[0].restaurant_name %>
+                  </h5>
+                </a>
+              </a>
+            </div>
+            <% result.slice(1,result.length).forEach((elem) =>{ %>
+            <div class="carousel-item">
+              <a href="/restaurantes/oneRestaurant/<%= elem.restaurant_id %>">
+                <img
+                  src="/images/restaurantes/<%= elem.restaurant_img!==null?elem.restaurant_img:'user.png' %>"
+                  class="d-block img-car"
+                  alt="fotop"
+                />
+              </a>
+              <a href="/restaurantes/oneRestaurant/<%= elem.restaurant_id %>">
+                <h5 class="text-center fs-3 mt-3">
+                  <%= elem.restaurant_name %>
+                </h5>
+              </a>
+            </div>
+            <% }) %>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleAutoplaying1"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleAutoplaying1"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center">
+      <a href="/restaurantes">
+        <button class="btn-link">Ir a Restaurantes</button>
+      </a>
+    </div>
+  </section>
+
+  <div
+    class="col-12 d-flex flex-column justify-content-center align-items-center text-center my-5"
+  >
+    <hr />
+  </div>
+
+  <!-- Carrusel 2 -->
+
+  <section
+    class="section-carousel row container-fluid justify-content-center mt-5 p-5 ms-auto me-auto"
+  >
+    <h2 class="mb-5 text-center">Descubre todos nuestros platos</h2>
+    <div class="cont  col-10 col-lg-8 d-flex justify-content-center al">
+      <div class="container-xxl">
+        <div
+          id="carouselExampleAutoplaying"
+          class="carousel slide"
+          data-bs-ride="carousel"
+          data-bs-interval="2000"
+        >
+          <div class="carousel-indicators">
+            <% result_dish.forEach(elem => { %>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide-to="<%= elem.dish_id %>"
+              class="active mb-3"
+              aria-current="true"
+              aria-label="<%= elem.dish_name %>"
+            ></button>
+            <% }) %>
+          </div>
+
+          <div class="carousel-inner justify-content-center align-items-center">
+            <div class="carousel-item active">
+              <a href="/platos/onePlate/<%= result_dish[0].dish_id %>">
+                <img
+                  src="/images/platos/<%= result_dish[0].dish_img!==null?result_dish[0].dish_img:'plato.png' %>"
+                  class="d-block img-car"
+                  alt="fotop"
+                />
+                <a href="/platos/onePlate/<%= result_dish[0].dish_id %>">
+                  <h5 class="text-center fs-3 mt-3">
+                    <%= result_dish[0].dish_name %>
+                  </h5>
+                </a>
+              </a>
+            </div>
+            <% result_dish.slice(1,result.length).forEach((elem) =>{ %>
+            <div class="carousel-item">
+              <a href="/platos/onePlate/<%= elem.dish_id %>">
+                <img
+                  src="/images/platos/<%= elem.dish_img!==null?elem.dish_img:'plato.png' %>"
+                  class="d-block img-car"
+                  alt="fotop"
+                />
+              </a>
+              <a href="/platos/onePlate/<%= elem.dish_id %>">
+                <h5 class="text-center fs-3 mt-3"><%= elem.dish_name %></h5>
+              </a>
+            </div>
+            <% }) %>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <a href="/platos">
+        <button class="btn-link">Ir a Platos</button>
+      </a>
+    </div>
+  </section>
+</main>
+
+<%- include('footer') %>

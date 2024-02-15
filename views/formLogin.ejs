@@ -1,0 +1,43 @@
+<%- include('head') %>
+<link rel="stylesheet" href="/stylesheets/login.css" />
+<title>Home</title>
+<%- include('navbar') %>
+
+<main>
+  <section class="container-fluid form-info">
+    <div class="row login pb-5">
+      <div class="col-5 pt-5 mb-4 d-none d-md-flex justify-content-center align-items-end">
+        <img class="img-login" src="/images/assets/vertical-removebg-preview.jpg" alt="logo" />
+      </div>
+      <div class="col-12 col-md-7 container">
+        <form
+        class="form"
+        action="/restaurantes/login"
+        method="post">
+          <p class="title">Login</p>
+          <input
+            placeholder="Email"
+            class="pium input"
+            type="text"
+            name="email"
+          />
+          <input
+            placeholder="Contraseña"
+            class="pium input"
+            type="password"
+            name="password"
+          />
+          <h6 style="color: rgb(254, 209, 126)">
+            <%= typeof message != 'undefined' ? message : null %>
+          </h6>
+          <button class="btn-login">Login</button>
+          <a href="/">
+            <button class="btn-login" type="button">cancelar</button>
+          </a>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<%- include('footer') %>

@@ -1,0 +1,163 @@
+main{
+  color: white;
+}
+
+body{
+  background-image: url(../images/assets/Captura\ de\ pantalla\ 2023-11-26\ 120400.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+
+
+/* Section 2 */
+.foto{
+  margin-right: 0;
+}
+
+.info{
+  margin-left: 0;
+
+}
+
+.res-img{
+  width: 75%;
+  border-radius: 20px;
+}
+
+@media (width <= 800px){
+  .res.img {
+    width: 100%;
+  }
+
+  .foto{
+    height: 30vh;
+    width: 100%;
+  }
+}
+
+
+.boton{
+  height: 3rem;
+  color: black;
+  margin-top: 1.5rem;
+  background-color: wheat;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 1.2rem;
+}
+
+@media (width <= 800px){
+  .boton {
+    height: 3.5rem;
+  }
+}
+
+.boton:hover {
+  background-color: antiquewhite;
+  box-shadow: none;
+}
+
+/* formulario */
+.form-add-plate{
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.input {
+  margin: 0.5rem 0;
+  padding: 0.5rem 0.25rem;
+  background-color: inherit;
+  color: wheat;
+  border: none;
+}
+
+.pium {
+  border-bottom: 1px solid wheat;
+  transition: all 400ms;
+ 
+}
+
+.pium:hover {
+  background-color: #424242;
+  border: none;
+  border-radius: 0.5rem;
+}
+
+input[type="file"] {
+  color: wheat;
+}
+
+
+hr {
+  opacity: 1;
+  color: wheat;
+  border: 2px solid wheat;
+  width: 50%;
+}
+
+
+/* Section 3 */
+.card img{
+  max-width: fit-content;
+  height: auto;
+  border-radius: 35px 10px 35px 10px;
+  border: 1px solid rgba(242, 205, 142, 0.438);
+  box-shadow: 2px 2px 5px rgb(90, 64, 16), -2px -2px 5px rgb(90, 64, 16);
+}
+
+.card {
+  height: 500px;
+
+  border-radius: 35px 15px 35px 15px !important;
+
+  background-image: linear-gradient(rgba(249, 249, 249, 0.2), rgba(249, 249, 249, 0.2)), url(../images/assets/2.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 2px solid rgba(255, 244, 225, 0.438);
+  transition: 0.5s ease-out;
+ }
+ 
+.card-body {
+  position: relative;
+  width: 100%;
+}
+ 
+ .card-button {
+  transform: translate(-50%, 80%);
+  width: 50%;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 244, 225, 0.724);
+  background-color: rgb(242, 216, 167);
+  font-size: 1rem;
+  padding: 0.5rem;
+  position: absolute;
+  left: 50%;
+  transition: 0.3s;
+  bottom: 3px;
+ }
+ 
+ .card-title {
+  font-weight: bolder;
+  text-shadow: 1px 1px 2px rgb(54, 54, 54);
+ }
+ 
+ .card:hover {
+  border-color: rgb(255, 243, 232);
+  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.685);
+ }
+ 
+ .card:hover .card-button {
+  transform: translate(-50%, 10%);
+ }
+
+ .card img:hover{
+  transform: scale(1.05);
+  transition: 0.3s;
+}
+
+

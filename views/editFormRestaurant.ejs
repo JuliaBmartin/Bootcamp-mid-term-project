@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Editar Restaurante </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1> title </h1>
+    <p>Welcome to  Restaurant </p>
+
+    <form 
+    action="/restaurantes/editarRestaurante/<%= result[0].restaurant_id %>" 
+    method="post" 
+    enctype="multipart/form-data"
+    >
+    <input 
+    type="text"
+    name="restaurant_name"
+    value="<%= result[0].restaurant_name %>"
+    >
+    <input 
+    type="text"
+    name="style"
+    value="<%= result[0].style %>"
+    >
+    <input 
+    type="email"
+    name="email"
+    value="<%= result[0].email %>"
+    >
+    <input 
+    type="text"
+    name="phone_number"
+    value="<%= result[0].phone_number %>"
+    >
+    <textarea 
+    name="information" 
+    id="" 
+    cols="30" 
+    rows="5"
+    maxlength="255">
+  </textarea>
+    <input 
+    type="file"
+    name="img"
+    >
+
+    <h3><%= typeof message != 'undefined' ? message : null %></h3>
+    <button class="btn btn-primary">Aceptar</button>
+
+    <a href="/restaurantes">
+      <button type="button" class="btn btn-primary">Cancelar</button>
+    </a>
+
+    <button type="reset" class="btn btn-primary">Limpiar</button>
+  </form>
+
+  </body>
+</html>

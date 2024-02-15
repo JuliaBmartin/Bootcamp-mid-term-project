@@ -1,0 +1,69 @@
+.form-info {
+  background-image: url(../images/assets/Login-registro.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.img-login {
+  width: 60%;
+}
+
+.container {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  width: 400px;
+  height: 550px;
+  background-image: linear-gradient(to bottom, #424242, #212121);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 0.5rem;
+  margin-top: 100px;
+}
+
+.title {
+  color: wheat;
+  margin: 3rem 0;
+  font-size: 2rem;
+}
+
+.input {
+  margin: 0.5rem 0;
+  padding: 1rem 0.5rem;
+  width: 20rem;
+  background-color: inherit;
+  color: wheat;
+  border: none;
+}
+
+.pium {
+  border-bottom: 1px solid wheat;
+  transition: all 400ms;
+}
+
+.pium:hover {
+  background-color: #424242;
+  border: none;
+  border-radius: 0.5rem;
+}
+
+.btn-login {
+  height: 3rem;
+  width: 20rem;
+  margin-top: 3rem;
+  background-color: wheat;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 1.2rem;
+}
+
+.btn-login:hover {
+  background-color: antiquewhite;
+  box-shadow: none;
+}

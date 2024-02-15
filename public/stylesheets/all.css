@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Gruppo&display=swap');
+
+body{
+  background-image: url(../images/assets/Captura\ de\ pantalla\ 2023-11-26\ 120400.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Gruppo', sans-serif;
+}
+
+h1{
+  color: rgb(255, 232, 189);
+  text-shadow: 2px 2px 5px rgb(244, 175, 48), -2px -2px 5px rgb(244, 175, 48);
+}
+
+h5{
+  font-family: 'Gruppo', sans-serif;
+}
+
+section{
+  height: 100%;
+  margin-top: 1rem;
+}
+
+.card img{
+  max-width: fit-content;
+  height: auto;
+
+  border-radius: 35px 10px 35px 10px;
+  border: 1px solid rgba(161, 121, 52, 0.438);
+  box-shadow: 2px 2px 5px rgb(75, 52, 9), -2px -2px 5px rgb(75, 52, 9);
+}
+
+.card {
+  height: 500px;
+
+  border-radius: 35px 15px 35px 15px !important;
+
+  background-image: url(../images/assets/2.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 2px solid rgba(255, 244, 225, 0.438);
+  transition: 0.5s ease-out;
+ }
+ 
+.card-body {
+  position: relative;
+  width: 100%;
+}
+ 
+ .card-button {
+  transform: translate(-50%, 80%);
+  width: 50%;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 244, 225, 0.724);
+  background-color: rgb(242, 216, 167);
+  font-size: 1rem;
+  padding: 0.5rem;
+  position: absolute;
+  left: 50%;
+  transition: 0.3s;
+  bottom: 3px;
+ }
+ 
+ .card-title {
+  font-weight: bolder;
+  text-shadow: 1px 1px 2px rgb(54, 54, 54);
+ }
+ 
+ .card:hover {
+  border-color: rgb(255, 243, 232);
+  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.685);
+ }
+ 
+ .card:hover .card-button {
+  transform: translate(-50%, 10%);
+ }
+
+ .card img:hover{
+  transform: scale(1.05);
+  transition: 0.3s;
+}

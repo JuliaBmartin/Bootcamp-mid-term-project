@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Platos </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1> Platos </h1>
+    <p>Subir un plato </p>
+
+    <form 
+    action="/platos/subirPlato/<%= restaurant_id %>" 
+    method="post" 
+    enctype="multipart/form-data"
+    >
+      <input 
+      type="text"
+      name="dish_name"
+      placeholder="Nombre"
+      >
+      <input 
+      type="text"
+      name="price"
+      placeholder="Precio"
+      >
+      <textarea 
+      name="description" 
+      id="" 
+      cols="30" 
+      rows="5"
+      maxlength="255">
+    </textarea>
+      <input 
+      type="file"
+      name="img"
+      >
+
+      <h3><%= typeof message != 'undefined' ? message : null %></h3>
+      <button class="btn btn-primary">Aceptar</button>
+
+      <a href="/restaurantes/oneRestaurant/<%= restaurant_id %>">
+        <button type="button" class="btn btn-primary">Cancelar</button>
+      </a>
+
+      <button type="reset" class="btn btn-primary">Limpiar</button>
+    </form>
+
+  </body>
+  </html>

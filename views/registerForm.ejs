@@ -1,0 +1,81 @@
+<%- include('head') %>
+<link rel="stylesheet" href="/stylesheets/registro.css" />
+<title>Home</title>
+<%- include('navbar') %>
+
+<section class="container-fluid">
+  <div class="row form-info-login form-info">
+    <div class="col-5 pt-5 d-none d-md-flex justify-content-center align-items-end">
+      <img class="img-login" src="/images/assets/vertical-removebg-preview.jpg" alt="logo" />
+    </div>
+    <div class="col-12 col-md-7 container">
+    <form 
+    class="form"
+    action="/restaurantes/registro" 
+    method="post" 
+    enctype="multipart/form-data"
+    >
+    <p class="title">Regístrate</p>
+      <input 
+      type="text"
+      class="pium input"
+      name="restaurant_name"
+      placeholder="Nombre"
+      >
+      <input 
+      type="text"
+      name="style"
+      class="pium input"
+      placeholder="Estilo"
+      >
+      <input 
+      type="email"
+      name="email"
+      class="pium input"
+      placeholder="Email"
+      >
+      <input 
+      type="text"
+      name="phone_number"
+      class="pium input"
+      placeholder="Teléfono"
+      >
+      <textarea 
+      name="information" 
+      class="pium input"
+      id="" 
+      cols="30" 
+      rows="1"
+      maxlength="255"
+      placeholder="Información">
+    </textarea>
+      <input 
+      type="password"
+      name="password"
+      class="pium input"
+      placeholder="Contraseña"
+      >
+      <input 
+      type="password"
+      name="password2"
+      class="pium input"
+      placeholder="Confirma tu contraseña"
+      >
+      <input 
+      type="file"
+      name="img"
+      class="input" 
+      >
+
+      <h6 style="color: rgb(254, 209, 126)"><%= typeof message != 'undefined' ? message : null %></h6>
+      <button class="btn-login">Aceptar</button>
+
+      <a href="/">
+        <button type="button" class="btn-login">Cancelar</button>
+      </a>
+
+      <button type="reset" class="btn-login">Limpiar</button>
+    </form>
+  </section>
+
+    <%- include('footer') %>

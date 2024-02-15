@@ -1,0 +1,33 @@
+
+.icon{
+  width: 20%;
+  filter: invert(1);
+  display: flex;
+  margin: auto;
+  align-items: center;
+}
+
+@media (width <= 800px){
+  .icon {
+    width: 60%;
+  }
+}
+
+
+hr {
+  opacity: 1;
+  color: wheat;
+  border: 2px solid wheat;
+  width: 50%;
+}
+
+.copy{
+  color: white;
+}
+
+.hr-footer{
+  opacity: 1;
+  color: wheat;
+  border: 2px solid wheat;
+  width: 20%;
+}

@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Gruppo&display=swap');
+*{
+  font-family: 'Gruppo', sans-serif;
+}
+
+.navbar {
+  margin: 0;
+  background-color: black;
+}
+
+a{
+  text-decoration: none;
+}
+
+.img-nav{
+  width: 120px;
+}
+
+.nav-link{
+  color: gold;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-nav{
+  height: 2.5rem;
+  width: 6rem;
+  margin-top: 3rem;
+  background-color: wheat;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 1.2rem;
+}

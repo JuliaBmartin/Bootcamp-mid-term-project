@@ -1,0 +1,46 @@
+<%- include('head') %>
+<link rel="stylesheet" href="/stylesheets/style.css" />
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+/>
+<title>Home</title>
+<%- include('navbar') %>
+
+<main class="container-fluid">
+  <section class="row justify-content-center align-items-center">
+    <div>
+      <h1 class="text-center mt-5 p-5">Contacta con nosotros</h1>
+    </div>
+
+    <div class="col-7 d-flex flex-column mb-5">
+      <div class="row mb-3 g-5">
+        <iframe
+          class= "col-12 col-md-6"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3199.187672335073!2d-4.459760323403652!3d36.69402787227755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd72f9dc907cdda5%3A0x13c9c9d055ec47d2!2sSocraTech!5e0!3m2!1ses!2ses!4v1695978479310!5m2!1ses!2ses"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+        <div class="col-12 col-md-6 d-flex justify-content- align-items-center">
+          <div>
+            <p class="fs-2">
+              <span class="material-symbols-outlined"> call </span>
+              (+34) 623 000 071
+            </p>
+            <p class="fs-2">
+              <span class="material-symbols-outlined"> mail </span>
+              hello@socratech.es
+            </p>
+            <p class="fs-2">
+              <span class="material-symbols-outlined"> schedule </span>
+              Lunes a jueves de 8:00 a 18:00. Viernes de 8:00 a 15:00.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<%- include('footer') %>

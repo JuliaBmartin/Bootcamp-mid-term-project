@@ -1,0 +1,108 @@
+<%- include('head') %>
+<link rel="stylesheet" href="/stylesheets/one.css" />
+<title><%= result[0].dish_name %></title>
+<%- include('navbar') %>
+
+<main class="container-fluid">
+  <!-- Section 1 -->
+  <section
+    class="container-fluid row justify-content-center align-items-center"
+  >
+    <div>
+      <h1 class="text-center mt-5 pt-5 pb-3"><%= result[0].dish_name %></h1>
+    </div>
+  </section>
+
+  <!-- Section 2 -->
+  <section class="container-fluid">
+    <div class="row">
+      <div
+        class="foto col-12 col-md-7 d-flex justify-content-center align-items-center"
+      >
+        <img
+          class="res-img"
+          src="/images/platos/<%= result[0].dish_img %>"
+          alt="imagen-plato"
+        />
+      </div>
+      <div
+        class="info col-12 col-md-3 d-flex flex-column justify-content-center align-items-center text-center"
+      >
+        <h2><%= result[0].price %> €</h2>
+        <p class="fs-3"><%= result[0].description %></p>
+      </div>
+      <div class="info col-12 col-md-2"></div>
+    </div>
+  </section>
+
+  <!-- Botones -->
+
+  <div
+    class="botones col-12 d-flex justify-content-center align-items-center gap-2 mt-4 mb-2"
+  >
+    <button class="boton px-3" onclick="editForm(true)">Modificar datos</button>
+
+    <a href="/platos/resetImg/<%= result[0].dish_id %>">
+      <button class="boton px-3">Quitar imagen</button>
+    </a>
+
+    <a href="/platos/deletePlato/<%= result[0].dish_id %>">
+      <button class="boton px-3">borrar permanente</button>
+    </a>
+  </div>
+  <!-- Form Modificar plato -->
+
+  <div
+    class="botones row d-flex flex-column justify-content-center align-items-center"
+  >
+    <div class="form-add-plate col-11 mb-5" id="editForm">
+      <form
+        action="/platos/editarPlato/<%= result[0].dish_id %>"
+        method="post"
+        enctype="multipart/form-data"
+        class="col-6 mb-5 mt-3 d-flex flex-column justify-content-center align-items-center"
+      >
+        <div class="d-flex gap-3">
+          <input
+            type="text"
+            name="dish_name"
+            class="pium input col-9 col-md-8"
+            value="<%= result[0].dish_name %>"
+          />
+          <input
+            type="text"
+            name="price"
+            class="pium input col-3 col-md-2"
+            value="<%= result[0].price %>"
+          />
+        </div>
+        <textarea
+          name="description"
+          id="textareaId"
+          class="pium input text-center"
+          maxlength="255"
+        >
+        <%= result[0].description %>
+            </textarea
+        >
+
+        <label class="label-img d-flex justify-content-center mt-2" for="file"
+          >Sube una imagen</label
+        >
+        <input type="file" name="img" class="input" />
+
+        <h3><%= typeof message != 'undefined' ? message : null %></h3>
+
+        <div class="d-flex justify-content-center gap-3">
+          <button class="boton px-3">Aceptar</button>
+          <button type="button" class="boton px-3" onclick="editForm(false)">
+            Cancelar
+          </button>
+          <button type="reset" class="boton px-3">Limpiar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>
+
+<%- include('footer') %>

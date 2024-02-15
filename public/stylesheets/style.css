@@ -1,0 +1,95 @@
+
+main{
+  background-image: url(../images/assets/Captura\ de\ pantalla\ 2023-11-26\ 120400.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;;
+}
+
+h1{
+  color: rgb(255, 232, 189);
+  text-shadow: 2px 2px 5px rgb(244, 175, 48), -2px -2px 5px rgb(244, 175, 48);
+  font-weight: bolder;
+  font-size: 4rem;
+}
+
+
+h2{
+  color: rgb(255, 232, 189);
+  text-shadow: 2px 2px 5px rgb(244, 175, 48), -2px -2px 5px rgb(244, 175, 48);
+  font-weight: bolder;
+  font-size: 2rem;
+}
+
+h5 {
+  text-decoration: none;
+  color: white;
+}
+
+p{
+  color: white;
+}
+
+span{
+  color: white;
+}
+
+iframe{
+  border-radius: 10%;
+  height: 40vh;
+}
+
+@media (width <= 800px){
+  iframe{
+    height: 30vh;
+  }
+}
+
+
+.material-symbols-outlined {
+  color: gold;
+}
+
+
+.btn-link {
+  height: 2.5rem;
+  width: 15rem;
+  margin-top: 3rem;
+  background-color: wheat;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 1.2rem;
+  text-decoration: none !important; 
+  color: black !important;
+}
+
+
+/* Carrusel */
+
+.section-carousel{
+  backdrop-filter: blur(5px);
+
+}
+
+
+/* .carousel{
+  height: 400px;
+}  */
+
+.img-car{
+  width: 100%;
+  border-radius: 7%;
+  object-fit: cover;
+}
+
+.cont{
+width: 100%;
+}
+
+/* About */
+.img-about{
+  width: 100%;
+  height: auto;
+}
+
+
